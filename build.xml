@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project AB1.0 with Jar-in-Jar Loader">
+    <!--ANT 1.7 is required                                        -->
+ <property name="lib.dir"     value="external"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>    
+<target name="clean">
+        <delete dir="src" includes = "**/*.class"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="src"/>
+	 <javac srcdir="src" destdir="src" classpathref="classpath"/>
+    </target>  
+
+
+  <target name="jar">
+        <jar destfile="ABSoftware.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="ab.demo.MainEntry"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ Jama-1.0.2.jar json-simple-1.1.1.jar WebSocket.jar commons-codec-1.7.jar amqp-client-4.1.0.jar slf4j-api-1.7.21.jar slf4j-simple-1.7.22.jar"/>
+            </manifest>
+            <zipfileset src="external/jar-in-jar-loader.zip"/>
+            <fileset dir="src/"/>
+            <zipfileset dir="external" includes="Jama-1.0.2.jar"/>
+            <zipfileset dir="external" includes="json-simple-1.1.1.jar"/>
+            <zipfileset dir="external" includes="WebSocket.jar"/>
+            <zipfileset dir="external" includes="commons-codec-1.7.jar"/>
+            <zipfileset dir="external" includes="amqp-client-4.1.0.jar"/>
+            <zipfileset dir="external" includes="slf4j-api-1.7.21.jar"/>
+            <zipfileset dir="external" includes="slf4j-simple-1.7.22.jar"/>
+        </jar>
+    </target>
+</project>
