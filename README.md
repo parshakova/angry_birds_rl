@@ -15,7 +15,7 @@ The code collects transitions which consist of (state, action, reward, new state
 
 ## Model Description
 
-‘Angry Bird’ is a game with a continuous action and state space. The policy gradient methods proved their effectiveness in a number of various domains. However, for a stochastic policy, the variance of a gradient estimate goes to infinity as policy becomes more and more deterministic.
+‘Angry Birds’ is a game with a continuous action and state space. The policy gradient methods proved their effectiveness in a number of various domains. However, for a stochastic policy, the variance of a gradient estimate goes to infinity as policy becomes more and more deterministic.
 Therefore deterministic policy, a limiting case of a stochastic policy (proved by D.Silver 2014) where we simply update policy parameters in the direction of gradients of a Q function, was proposed to deal with high-dimensional continuous action spaces.
 
 
@@ -32,9 +32,6 @@ In this game, we considered 7 main categories of objects: red bird, yellow bird,
 Also in actor-critic architecture, there are two streams of gradients coming from two networks (actor and critic), it was one of the main reasons to use LSTM encoding since in this case the encoded state is fed to actor and critic and thus LSTM could be trained faster due to double error backpropagation.
 
 The input is a list with 7 elements of size [batch x seqlen x n_coord], where seqlen (sequence length) varies for each category. Firstly, each category of object of size [batch x seqlen x n_coord] is transformed linearly with a unique matrix into [batch x seqlen x n_hidden], which is later encoded into a fixed size vector [batch x n_hidden] with a multiple layer LSTM. After that, we have 7 vectors of size [batch x n_hidden] that is encoded with attentional LSTM into a one fixed size vector [batch x n_hidden], which in principle has to catch the importance of each category and to which one pay more attention. 
-
-
-
 
 
 <p align="center">
