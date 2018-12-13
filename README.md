@@ -33,6 +33,7 @@ Also in actor-critic architecture, there are two streams of gradients coming fro
 
 The input is a list with 7 elements of size [batch x seqlen x n_coord], where seqlen (sequence length) varies for each category. Firstly, each category of object of size [batch x seqlen x n_coord] is transformed linearly with a unique matrix into [batch x seqlen x n_hidden], which is later encoded into a fixed size vector [batch x n_hidden] with a multiple layer LSTM. After that, we have 7 vectors of size [batch x n_hidden] that is encoded with attentional LSTM into a one fixed size vector [batch x n_hidden], which in principle has to catch the importance of each category and to which one pay more attention. 
 
+## Connection Pipeline 
 
 <p align="center">
 <img width=900 src="images/pipeline.jpg"><br>
