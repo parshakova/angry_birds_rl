@@ -5,7 +5,7 @@ Tensorflow implementation of a sequential decision-making agent for solving ‘A
 Within [Angry Birds Basic Game Playing Software](https://aibirds.org/) environment.
 
 <p align="center">
-<img width=900 src="images/model.jpg"><br>
+<img width=850 src="images/model.jpg"><br>
 <i><sub>Structure overview of the Angry Bird player: DDPG with Attention-based LSTM State Encoder.</sub></i><br>
 </p>
 
@@ -36,7 +36,7 @@ The input is a list with 7 elements of size [batch x seqlen x n_coord], where se
 ## Connection Pipeline 
 
 <p align="center">
-<img width=900 src="images/pipeline.jpg"><br>
+<img width=800 src="images/pipeline.jpg"><br>
 <i><sub>Connection pipeline overview.</sub></i><br>
 </p>
 
