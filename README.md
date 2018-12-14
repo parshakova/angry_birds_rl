@@ -1,4 +1,4 @@
-# AngryBirds_RL
+# Angry Birds RL
 
 Tensorflow implementation of a sequential decision-making agent for solving ‘Angry Birds’ using Deep Deterministic Policy Gradient (DDPG) with Attention-based Long Short-Term Memory (LSTM) for state encoding. In other words, we explore a model with a deterministic policy using an actor-critic algorithm for learning off policy with a stochastic behavior policy.
 
