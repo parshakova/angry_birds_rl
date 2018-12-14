@@ -24,8 +24,8 @@ In order to explore with a deterministic policy, we use an actor-critic algorith
 Since the java visual module is able to extract locations of movable objects (each location is of size n_coord = 5), we decided to use this information for a state description over the raw image as it contains already all useful information without the noise or background. 
 
 <p align="center">
-<img width=850 src="images/aibirds.jpg"><br>
-<i><sub>GIU of a Angry Birds.</sub></i><br>
+<img width=750 src="images/aibirds.jpg"><br>
+<i><sub>GIU of the Angry Birds.</sub></i><br>
 </p>
 
 In this game, we considered 7 main categories of objects: red bird, yellow bird, blue bird, pig, ice, wood, and stone. On each screen there can be a different number of these objects, thus to encode the sequences of different length we selected LSTM.
