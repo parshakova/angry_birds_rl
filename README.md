@@ -1,6 +1,6 @@
-# Angry Birds RL
+# Playing Angry Birds: Deep Deterministic Policy Gradient with Attention-based Long Short-Term Memory
 
-Tensorflow implementation of a sequential decision-making agent for solving ‘Angry Birds’ using Deep Deterministic Policy Gradient (DDPG) with Attention-based Long Short-Term Memory (LSTM) for state encoding. In other words, we explore a model with a deterministic policy using an actor-critic algorithm for learning off policy with a stochastic behavior policy.
+Tensorflow implementation of a sequential decision-making agent for solving "Angry Birds" using Deep Deterministic Policy Gradient (DDPG) with Attention-based Long Short-Term Memory (LSTM) for state encoding. In other words, we explore a model with a deterministic policy using an actor-critic algorithm for learning off policy with a stochastic behavior policy.
 
 Within [Angry Birds Basic Game Playing Software](https://aibirds.org/) environment.
 
@@ -15,7 +15,7 @@ The code collects transitions which consist of (state, action, reward, new state
 
 ## Model Description
 
-‘Angry Birds’ is a game with a continuous action and state space. The policy gradient methods proved their effectiveness in a number of various domains. However, for a stochastic policy, the variance of a gradient estimate goes to infinity as policy becomes more and more deterministic.
+"Angry Birds" is a game with a continuous action and state space. The policy gradient methods proved their effectiveness in a number of various domains. However, for a stochastic policy, the variance of a gradient estimate goes to infinity as policy becomes more and more deterministic.
 Therefore deterministic policy, a limiting case of a stochastic policy (proved by D.Silver 2014) where we simply update policy parameters in the direction of gradients of a Q function, was proposed to deal with high-dimensional continuous action spaces.
 
 
